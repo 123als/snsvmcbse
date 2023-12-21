@@ -1,0 +1,29 @@
+Dr. Aarav Deshmukh
+Age: 45
+Gender: Male
+Specialized in: Cardiology
+Experience: 20 years
+
+Dr. Naina Kapoor
+Age: 38
+Gender: Female
+Specialized in: Cardiac Surgery
+Experience: 15 years
+
+Dr. Arjun Reddy
+Age: 33
+Gender: Male
+Specialized in: Pediatric Cardiology
+Experience: 10 years
+
+Dr. Priya Sharma
+Age: 48
+Gender: Female
+Specialized in: Interventional Cardiology
+Experience: 25 years
+
+Dr. Rohit Patel
+Age: 41
+Gender: Male
+Specialized in: Electrophysiology
+Experience: 18 years

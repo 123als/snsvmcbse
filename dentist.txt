@@ -1,0 +1,30 @@
+Dr. Rohit Mehta
+Age: 35
+Gender: Male
+Specialized in: General Dentistry
+Experience: 12 years
+
+Dr. Nandita Verma
+Age: 40
+Gender: Female
+Specialized in: Orthodontics
+Experience: 18 years
+
+Dr. Sameer Kapoor
+Age: 45
+Gender: Male
+Specialized in: Periodontics
+
+Experience: 22 years
+
+Dr. Priya Sharma
+Age: 38
+Gender: Female
+Specialized in: Oral and Maxillofacial Surgery
+Experience: 15 years
+
+Dr. Arjun Singh
+Age: 42
+Gender: Male
+Specialized in: Endodontics
+Experience: 20 years

@@ -1,0 +1,29 @@
+Dr. Siddharth Kapoor
+Age: 48
+Gender: Male
+Specialized in: General Nephrology
+Experience: 22 years
+
+Dr. Anjali Patel
+Age: 40
+Gender: Female
+Specialized in: Pediatric Nephrology
+Experience: 18 years
+
+Dr. Arvind Sharma
+Age: 55
+Gender: Male
+Specialized in: Transplant Nephrology
+Experience: 28 years
+
+Dr. Pooja Reddy
+Age: 42
+Gender: Female
+Specialized in: Hypertension Specialist
+Experience: 20 years
+
+Dr. Rahul Verma
+Age: 38
+Gender: Male
+Specialized in: Dialysis Medicine
+Experience: 15 years

@@ -1,0 +1,29 @@
+Dr. Ananya Mishra
+Age: 40
+Gender: Female
+Specialized in: General Ophthalmology
+Experience: 18 years
+
+Dr. Rajiv Verma
+Age: 45
+Gender: Male
+Specialized in: Retina Specialist
+Experience: 22 years
+
+Dr. Nandini Singh
+Age: 35
+Gender: Female
+Specialized in: Pediatric Ophthalmology
+Experience: 12 years
+
+Dr. Vikram Shah
+Age: 50
+Gender: Male
+Specialized in: Cornea and External Diseases
+Experience: 25 years
+
+Dr. Meera Joshi
+Age: 42
+Gender: Female
+Specialized in: Glaucoma Specialist
+Experience: 15 years

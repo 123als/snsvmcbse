@@ -1,0 +1,29 @@
+Dr. Shalini Gupta
+Age: 40
+Gender: Female
+Specialized in: General Medicine
+Experience: 18 years
+
+Dr. Karan Kapoor
+Age: 45
+Gender: Male
+Specialized in: Family Medicine
+Experience: 22 years
+
+Dr. Anjali Joshi
+Age: 35
+Gender: Female
+Specialized in: Internal Medicine
+Experience: 12 years
+
+Dr. Vikas Singh
+Age: 50
+Gender: Male
+Specialized in: Preventive Medicine
+Experience: 25 years
+
+Dr. Naina Desai
+Age: 42
+Gender: Female
+Specialized in: Primary Care
+Experience: 15 years

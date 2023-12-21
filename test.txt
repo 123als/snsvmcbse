@@ -1,0 +1,885 @@
+<DrawerClickableItem@MDNavigationDrawerItem>
+MDBoxLayout:
+    orientation: 'vertical'
+    MDNavigationLayout:
+        ScreenManager:
+            id: screen
+            Screen:
+                name: "log"
+                MDRelativeLayout:
+                    md_bg_color: 106/255, 196/255, 204/255
+                    AsyncImage:
+                        allow_stretch: True
+                        keep_ratio: False
+                        source: "/storage/emulated/0/Log.jpg"
+
+                    MDLabel:
+                        text: "LOG IN"
+                        pos_hint: {"center_x": 0.7, "center_y": 0.8}
+                        font_size: "40sp"
+                        bold: True
+                        theme_text_color: "Custom"
+                        text_color: 1, 1, 1, 1
+
+                    MDTextField:
+                        hint_text: "Name"
+                        line_color_focus: 1, 1, 1, 1
+                        mode: "fill"
+                        icon_left: "account"
+                        id: name
+                        size_hint: (None, None)
+                        size: (750, 60)
+                        pos_hint: {"center_x": 0.3, "center_y": 0.65}
+
+                    MDTextField:
+                        hint_text: "Phone no."
+                        id: phone
+                        input_filter: "int"
+                        icon_left: "phone"
+                        mode: "fill"
+                        line_color_focus: 1, 1, 1, 1
+                        size_hint: (None, None)
+                        size: (750, 60)
+                        pos_hint: {"center_x": 0.3, "center_y": 0.55}
+
+                    MDTextField:
+                        hint_text: "Email id"
+                        id: email
+                        icon_left: "email"
+                        mode: "fill"
+                        size_hint: (None, None)
+                        size: (750, 60)
+                        pos_hint: {"center_x": 0.3, "center_y": 0.45}
+
+                    MDTextField:
+                        hint_text: "Password"
+                        id: password
+                        mode: "fill"
+                        icon_left: "lock"
+                        size_hint: (None, None)
+                        size: (750, 60)
+                        password: True
+                        pos_hint: {"center_x": 0.3, "center_y": 0.35}
+
+                    MDRoundFlatButton:
+                        text: "Log In"
+                        theme_text_color: "Custom"
+                        text_color: 240/255, 240/255, 240/255, 1
+                        md_bg_color: 19/255, 214/255, 149/255
+                        pos_hint: {"center_x": 0.3, "center_y": 0.2}
+                        size_hint: (0.2, 0.08)
+                        on_release: app.log()     	                      			                 
+            Screen:
+                name: "main"
+                MDBottomAppBar:
+                    MDTopAppBar:
+                        MDIconButton:
+                            icon : "home"
+                            on_release:app.change_screen("main")
+                            pos_hint:{"center_x":0.45}
+                MDTopAppBar:
+                    pos_hint: {'top': 1}
+                    title: "XYZ Hospital"
+                    elevation: 5
+                    id: color
+                    md_bg_color: 240/255, 67/255, 55/254, 1
+                    center_title: True
+                    left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+                    right_action_items: [["heart-plus"]]
+               
+                MDCard:
+                	padding:"20dp"
+                	size_hint:None,None
+                	radius:[48]
+                	elevation:4
+                	pos_hint:{"center_x":0.2,"center_y":0.6}
+                	md_bg_color:230/255, 225/255, 225/255,1
+                    size:350,300
+                    on_release :app.change_screen("choose")
+                    MDRelativeLayout:
+	                    MDLabel:
+	                    	text:"Register"
+	                    	theme_text_color : "Primary"
+	                    	pos_hint:{"center_x":0.8,"center_y":0.9999}
+	                    Image:
+	                    	source:"register.png"
+	                    	pos_hint:{"center_x":0.5,"center_y":0.376}
+                            size_hint : None,None
+                            size:450,220
+                MDCard:
+                	padding:"20dp"
+                	size_hint:None,None
+                	radius:[48]
+                	elevation:4
+                	pos_hint:{"center_x":0.5,"center_y":0.6}
+                	md_bg_color:230/255, 225/255, 225/255,1
+                    size:350,300
+                    on_release :app.change_screen("choose1")
+                    MDRelativeLayout:
+	                    MDLabel:
+	                    	text:"Contact Doctor"
+	                    	theme_text_color : "Primary"
+	                    	pos_hint:{"center_x":0.7,"center_y":0.9999}
+	                    Image:
+	                    	source:"msg.png"
+	                    	pos_hint:{"center_x":0.5,"center_y":0.376}
+                MDCard:
+                	padding:"20dp"
+                	size_hint:None,None
+                	radius:[48]
+                	elevation:4
+                	pos_hint:{"center_x":0.8,"center_y":0.6}
+                	md_bg_color:230/255, 225/255, 225/255,1
+                    size:350,300
+                    on_release :app.change_screen("order")
+                    MDRelativeLayout:
+	                    MDLabel:
+	                    	text:"Order Medicine"
+	                    	theme_text_color : "Primary"
+	                    	pos_hint:{"center_x":0.8,"center_y":0.9999}
+	                    Image:
+	                    	source:"Ord.png"
+	                    	pos_hint:{"center_x":0.5,"center_y":0.39}
+	                    	size_hint:None,None
+	                    	size:450,220
+            Screen:
+                name:"order"
+                MDTopAppBar:
+                    left_action_items: [["arrow-left", lambda x: app.change_screen("main")]]
+                    pos_hint:{'top':1}
+                    title:"Order Medicine"
+                MDBottomAppBar:
+                    MDTopAppBar:
+                        MDIconButton:
+                            icon : "home"
+                            on_release:app.change_screen("main")
+                            pos_hint:{"center_x":0.45}
+                MDLabel:
+                    text:"Fill out the details"
+                    bold:True
+                    halign:"center"
+                    pos_hint:{"center_x":0.5,"center_y":0.84}
+                MDTextField:
+                    id: name
+                    pos_hint:{"center_x":0.5,"center_y":0.76}
+                    size_hint: (0.5, None)
+                    hint_text:"Name of the Order"
+                MDTextField:
+                    id:address
+                    pos_hint:{"center_x":0.5,"center_y":0.68}
+                    size_hint: (0.5, None)
+                    hint_text:"Address"
+                MDTextField:
+                    id:pin
+                    pos_hint:{"center_x":0.5,"center_y":0.60}
+                    size_hint: (0.5, None)
+                    hint_text:"PinCode"
+                    input_filter:"int"
+                MDRaisedButton:
+                    text: "Submit"
+                    pos_hint:{"center_x":0.50,"center_y":0.33}
+                    on_release: app.change_screen("done")
+                MDTextField:
+                    id: medicine name
+                    pos_hint:{"center_x":0.5,"center_y":0.45}
+                    size_hint: (0.5, None)
+                    hint_text: "Name of the medicine"
+                MDTextField:
+                    id:phone
+                    pos_hint:{"center_x":0.5,"center_y":0.52}
+                    size_hint:(0.5,None)
+                    hint_text:"Phone number (+91)"        
+            Screen:
+                name: "bot"
+                MDBoxLayout:
+                    MDTopAppBar:
+                        title: "Helper Bot"
+                        pos_hint: {"top": 1}
+                        md_bg_color: 143/255, 81/255, 194/255, 1
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+            Screen:
+                name:"doctor_list"
+                MDRelativeLayout:
+                	md_bg_color:206/255, 235/255, 232/255,1
+                	orientation:"vertical"
+                	MDTopAppBar:
+                		pos_hint:{"top":1}
+                		title:"Doctor List"
+                	    left_action_items:[["arrow-left", lambda x : app.change_screen("choose")]]
+                	ScrollView:
+                	    pos_hint:{"top":0.9}
+                	    size_hint_y:0.9
+                    	MDBoxLayout:
+                    		orientation:"vertical"
+                    		id:list
+                    		adaptive_height:True
+                    		spacing:"20dp"
+
+            Screen:
+            	name:"w"
+            	MDFloatLayout:
+            		MDTopAppBar:
+            			pos_hint:{"top":1}
+                        left_action_items:[["arrow-left", lambda x : app.cancelreq()]]
+            		MDLabel:
+            			text:"Please Wait, Finding A Doctor" 
+            			pos_hint:{"center_x":0.65,"center_y":0.5}
+            			font_style: "H2"   
+            			bold:True
+                    
+            Screen:
+            	name:"chat_room"
+	            MDBoxLayout:
+				    orientation: "vertical"
+				    md_bg_color : 229/255, 235/255, 148/255,1
+				
+				    ScrollView:
+				        MDBoxLayout:
+				            orientation: "vertical"
+				            id: chat
+				            spacing: "20dp"
+				            adaptive_height: True
+				    MDRelativeLayout:
+				        size_hint: (1, 0.15)
+				        MDTextFieldRect:
+				            hint_text: "message"
+				            size_hint: None, None
+				            size: 1200, 60
+				            id: message
+				            
+				            pos_hint: {"center_x": 0.5, "center_y": 0.19}
+				
+				        MDIconButton:
+				            icon: "send"
+				            theme_text_color :"Custom"
+				            text_color : 1,1,1,1
+				            md_bg_color:15/255, 148/255, 117/255,1
+				            pos_hint: {"center_x": 0.85, "center_y": 0.19}
+				            on_release: app.send()
+                    		
+                   
+            Screen:
+                name:"choose1"
+                MDTopAppBar:
+                    title:"Choose The Doctor Type"
+                    pos_hint:{"top":1}
+                    md_bg_color:32/255, 156/255, 132/255, 1
+                    left_action_items:[["arrow-left", lambda x:app.change_screen("main")]]
+                ScrollView:
+                    pos_hint:{"center_y":.43,"center_x":.55}
+                    
+                    GridLayout:
+                        cols:4
+                        adaptive_height: True
+                        spacing:"40dp"
+                        padding:"30dp"
+                        MDCard:
+                            padding:"50dp"
+                            md_bg_color:81/255, 219/255, 194/255,1
+                            radius:[16,16,16,16]
+                            on_release:app.request()
+                            size_hint: None, None
+                            elevation:4
+                            size: "250dp", "250dp"
+                            MDRelativeLayout:
+                                Image:
+                                    source: "cardiac.jpg"
+                                    pos_hint :{"center_x":0.5,"center_y":0.8}
+                                    size_hint:None,None
+                                    size:"150dp","150dp"
+                                MDLabel:
+                                    text:"Cardiologist"
+                                    pos_hint :{"center_x":0.69,"center_y":0.3}
+                                    theme_text_color:"Custom"
+                                    text_color:1,1,1,1
+                                    bold:True
+                                    font_style:"H6"
+                                MDLabel:
+                                    text:"Heart doctor"  
+                                    pos_hint :{"center_x":0.7,"center_y":0.17}
+                                    theme_text_color:"Secondary"
+                        MDCard:
+                            padding:"50dp"
+                            md_bg_color:154/255, 222/255, 91/255,1
+                            radius:[16,16,16,16]
+                            on_release:app.request()
+                            size_hint: None, None
+                            elevation:4
+                            size: "250dp", "250dp"
+                            MDRelativeLayout:
+                                Image:
+                                    source: "dentist.jpg"
+                                    pos_hint :{"center_x":0.5,"center_y":0.8}
+                                    size_hint:None,None
+                                    size:"150dp","150dp"
+                                MDLabel:
+                                    text:"Dentist"
+                                    pos_hint :{"center_x":0.69,"center_y":0.3}
+                                    theme_text_color:"Custom"
+                                    text_color:1,1,1,1
+                                    bold:True
+                                    font_style:"H6"
+                                MDLabel:
+                                    text:"Teeth doctor"  
+                                    pos_hint :{"center_x":0.6,"center_y":0.17}
+                                    theme_text_color:"Secondary"                                		     
+                                                            
+                        MDCard:
+                            padding:"50dp"
+                            md_bg_color:230/255, 155/255, 76/255,1
+                            radius:[16,16,16,16]
+                            on_release:app.request()
+                            size_hint: None, None
+                            elevation:4
+                            size: "250dp", "250dp"
+                            MDRelativeLayout:
+                                Image:
+                                    source: "eye.jpg"
+                                    pos_hint :{"center_x":0.5,"center_y":0.8}
+                                    size_hint:None,None
+                                    size:"150dp","150dp"
+                                MDLabel:
+                                    text:"Ophthalmic"
+                                    pos_hint :{"center_x":0.69,"center_y":0.3}
+                                    theme_text_color:"Custom"
+                                    text_color:1,1,1,1
+                                    bold:True
+                                    font_style:"H6"
+                                MDLabel:
+                                    text:"Eye doctor"  
+                                    pos_hint :{"center_x":0.7,"center_y":0.17}
+                                    theme_text_color:"Secondary"
+                                                                                            
+                        MDCard:
+                            padding:"50dp"
+                            md_bg_color:81/255, 126/255, 232/255,1
+                            radius:[16,16,16,16]
+                            on_release:app.request()
+                            size_hint: None, None
+                            elevation:4
+                            size: "250dp", "250dp"
+                            MDRelativeLayout:
+                                Image:
+                                    source: "stomach.jpg"
+                                    pos_hint :{"center_x":0.5,"center_y":0.8}
+                                    size_hint:None,None
+                                    size:"150dp","150dp"
+                                MDLabel:
+                                    text:"Gastroentero"
+                                    pos_hint :{"center_x":0.52,"center_y":0.23}
+                                    theme_text_color:"Custom"
+                                    text_color:1,1,1,1
+                                    bold:True
+                                    font_style:"H6"
+                                MDLabel:
+                                    text:"Stomach doctor"  
+                                    pos_hint :{"center_x":0.5,"center_y":0.13}
+                                    theme_text_color:"Secondary"
+
+                        MDCard:
+                            padding:"50dp"
+                            md_bg_color:90/255, 155/255, 180/255,1
+                            radius:[16,16,16,16]
+                            on_release:app.request()
+                            size_hint: None, None
+                            elevation:4
+                            size: "250dp", "250dp"
+                            MDRelativeLayout:
+                                Image:
+                                    source: "neuro.jpg"
+                                    pos_hint :{"center_x":0.5,"center_y":0.8}
+                                    size_hint:None,None
+                                    size:"150dp","150dp"
+                                MDLabel:
+                                    text:"Neurologist"
+                                    pos_hint :{"center_x":0.69,"center_y":0.3}
+                                    theme_text_color:"Custom"
+                                    text_color:1,1,1,1
+                                    bold:True
+                                    font_style:"H6"
+                                MDLabel:
+                                    text:"Brain doctor"  
+                                    pos_hint :{"center_x":0.7,"center_y":0.17}
+                                    theme_text_color:"Secondary"                                		                                	                                		                          	      	                                		                             	                                		                          	      	
+                        MDCard:
+                            padding:"50dp"
+                            md_bg_color:235/255, 56/255, 96/255,1
+                            radius:[16,16,16,16]
+                            on_release:app.request()
+                            size_hint: None, None
+                            elevation:4
+                            size: "250dp", "250dp"
+                            MDRelativeLayout:
+                                Image:
+                                    source: "bones.jpg"
+                                    pos_hint :{"center_x":0.5,"center_y":0.8}
+                                    size_hint:None,None
+                                    size:"150dp","150dp"
+                                MDLabel:
+                                    text:"Orthopedic"
+                                    pos_hint :{"center_x":0.69,"center_y":0.3}
+                                    theme_text_color:"Custom"
+                                    text_color:1,1,1,1
+                                    bold:True
+                                    font_style:"H6"
+                                MDLabel:
+                                    text:"Bone doctor"  
+                                    pos_hint :{"center_x":0.7,"center_y":0.17}
+                                    theme_text_color:"Secondary"
+
+                        MDCard:
+                            padding:"50dp"
+                            md_bg_color:187/255, 230/255, 101/255,1
+                            radius:[16,16,16,16]
+                            on_release:app.request()
+                            size_hint: None, None
+                            elevation:4
+                            size: "250dp", "250dp"
+                            MDRelativeLayout:
+                                Image:
+                                    source: "doctor.jpg"
+                                    pos_hint :{"center_x":0.5,"center_y":0.82}
+                                    size_hint:None,None
+                                    size:"150dp","150dp"
+                                MDLabel:
+                                    text:"general practitioner"
+                                    pos_hint :{"center_x":0.69,"center_y":0.2}
+                                    theme_text_color:"Custom"
+                                    text_color:1,1,1,1
+                                    bold:True
+                                    font_style:"H6"
+                                MDLabel:
+                                    text:"General doctor"  
+                                    pos_hint :{"center_x":0.7,"center_y":0.01}
+                                    theme_text_color:"Secondary"              
+
+                        MDCard:
+                            padding:"50dp"
+                            md_bg_color:130/255, 230/255, 227/255,1
+                            radius:[16,16,16,16]
+                            on_release:app.request()
+                            size_hint: None, None
+                            elevation:4
+                            size: "250dp", "250dp"
+                            MDRelativeLayout:
+                                Image:
+                                    source: "kidney.jpg"
+                                    pos_hint :{"center_x":0.5,"center_y":0.8}
+                                    size_hint:None,None
+                                    size:"150dp","150dp"
+                                MDLabel:
+                                    text:"nephrologist"
+                                    pos_hint :{"center_x":0.69,"center_y":0.23}
+                                    theme_text_color:"Custom"
+                                    text_color:1,1,1,1
+                                    bold:True
+                                    font_style:"H6"
+                                MDLabel:
+                                    text:"Kidney doctor"  
+                                    pos_hint :{"center_x":0.7,"center_y":0.08}
+                                    theme_text_color:"Secondary"                    		
+                                		
+            Screen:
+                name:"choose"
+                MDFloatLayout:
+                    md_bg_color:232/255, 230/255, 223/255,1
+                    MDTopAppBar:
+                        title:"Choose The Doctor Type"
+                        pos_hint:{"top":1}
+                        md_bg_color:68/255, 156/255, 32/255, 1
+                        left_action_items:[["arrow-left", lambda x:app.change_screen("main")]]
+                    ScrollView:
+                        pos_hint:{"center_y":.3}
+                        
+                        GridLayout:
+                            cols:4
+                            adaptive_height: True
+                            spacing:"40dp"
+                            padding:"30dp"
+                            MDCard:
+                                padding:"50dp"
+                                md_bg_color:81/255, 219/255, 194/255,1
+                                radius:[16,16,16,16]
+                                on_release:app.doc_list()
+                                size_hint: None, None
+                                elevation:4
+                                size: "250dp", "250dp"
+                                MDRelativeLayout:
+                                	Image:
+                                		source: "cardiac.jpg"
+                               		 pos_hint :{"center_x":0.5,"center_y":0.8}
+                               		 size_hint:None,None
+                               		 size:"150dp","150dp"
+                               	 MDLabel:
+                                		text:"Cardiologist"
+                                		pos_hint :{"center_x":0.69,"center_y":0.3}
+                                		theme_text_color:"Custom"
+                                		text_color:1,1,1,1
+                                		bold:True
+                                		font_style:"H6"
+                                	MDLabel:
+                                		text:"Heart doctor"  
+                                		pos_hint :{"center_x":0.7,"center_y":0.17}
+                                		theme_text_color:"Secondary"
+                            MDCard:
+                                padding:"50dp"
+                                md_bg_color:154/255, 222/255, 91/255,1
+                                radius:[16,16,16,16]
+                                on_release:app.doc_list()
+                                size_hint: None, None
+                                elevation:4
+                                size: "250dp", "250dp"
+                                MDRelativeLayout:
+                                	Image:
+                                		source: "dentist.jpg"
+                               		 pos_hint :{"center_x":0.5,"center_y":0.8}
+                               		 size_hint:None,None
+                               		 size:"150dp","150dp"
+                               	 MDLabel:
+                                		text:"Dentist"
+                                		pos_hint :{"center_x":0.69,"center_y":0.3}
+                                		theme_text_color:"Custom"
+                                		text_color:1,1,1,1
+                                		bold:True
+                                		font_style:"H6"
+                                	MDLabel:
+                                		text:"Teeth doctor"  
+                                		pos_hint :{"center_x":0.6,"center_y":0.17}
+                                		theme_text_color:"Secondary"                                		     
+                                		                       
+                            MDCard:
+                                padding:"50dp"
+                                md_bg_color:230/255, 155/255, 76/255,1
+                                radius:[16,16,16,16]
+                                on_release:app.doc_list()
+                                size_hint: None, None
+                                elevation:4
+                                size: "250dp", "250dp"
+                                MDRelativeLayout:
+                                	Image:
+                                		source: "eye.jpg"
+                               		 pos_hint :{"center_x":0.5,"center_y":0.8}
+                               		 size_hint:None,None
+                               		 size:"150dp","150dp"
+                               	 MDLabel:
+                                		text:"Ophthalmic"
+                                		pos_hint :{"center_x":0.69,"center_y":0.3}
+                                		theme_text_color:"Custom"
+                                		text_color:1,1,1,1
+                                		bold:True
+                                		font_style:"H6"
+                                	MDLabel:
+                                		text:"Eye doctor"  
+                                		pos_hint :{"center_x":0.7,"center_y":0.17}
+                                		theme_text_color:"Secondary"
+                                	                                		                    
+                            MDCard:
+                                padding:"50dp"
+                                md_bg_color:81/255, 126/255, 232/255,1
+                                radius:[16,16,16,16]
+                                on_release:app.doc_list()
+                                size_hint: None, None
+                                elevation:4
+                                size: "250dp", "250dp"
+                                MDRelativeLayout:
+                                	Image:
+                                		source: "stomach.jpg"
+                               		 pos_hint :{"center_x":0.5,"center_y":0.8}
+                               		 size_hint:None,None
+                               		 size:"150dp","150dp"
+                               	 MDLabel:
+                                		text:"Gastroentero"
+                                		pos_hint :{"center_x":0.52,"center_y":0.23}
+                                		theme_text_color:"Custom"
+                                		text_color:1,1,1,1
+                                		bold:True
+                                		font_style:"H6"
+                                	MDLabel:
+                                		text:"Stomach doctor"  
+                                		pos_hint :{"center_x":0.5,"center_y":0.13}
+                                		theme_text_color:"Secondary"
+
+                            MDCard:
+                                padding:"50dp"
+                                md_bg_color:90/255, 155/255, 180/255,1
+                                radius:[16,16,16,16]
+                                on_release:app.doc_list()
+                                size_hint: None, None
+                                elevation:4
+                                size: "250dp", "250dp"
+                                MDRelativeLayout:
+                                	Image:
+                                		source: "neuro.jpg"
+                               		 pos_hint :{"center_x":0.5,"center_y":0.8}
+                               		 size_hint:None,None
+                               		 size:"150dp","150dp"
+                               	 MDLabel:
+                                		text:"Neurologist"
+                                		pos_hint :{"center_x":0.69,"center_y":0.3}
+                                		theme_text_color:"Custom"
+                                		text_color:1,1,1,1
+                                		bold:True
+                                		font_style:"H6"
+                                	MDLabel:
+                                		text:"Brain doctor"  
+                                		pos_hint :{"center_x":0.7,"center_y":0.17}
+                                		theme_text_color:"Secondary"                                		                                	                                		                          	      	                                		                             	                                		                          	      	
+                            MDCard:
+                                padding:"50dp"
+                                md_bg_color:235/255, 56/255, 96/255,1
+                                radius:[16,16,16,16]
+                                on_release:app.doc_list()
+                                size_hint: None, None
+                                elevation:4
+                                size: "250dp", "250dp"
+                                MDRelativeLayout:
+                                	Image:
+                                		source: "bones.jpg"
+                               		 pos_hint :{"center_x":0.5,"center_y":0.8}
+                               		 size_hint:None,None
+                               		 size:"150dp","150dp"
+                               	 MDLabel:
+                                		text:"Orthopedic"
+                                		pos_hint :{"center_x":0.69,"center_y":0.3}
+                                		theme_text_color:"Custom"
+                                		text_color:1,1,1,1
+                                		bold:True
+                                		font_style:"H6"
+                                	MDLabel:
+                                		text:"Bone doctor"  
+                                		pos_hint :{"center_x":0.7,"center_y":0.17}
+                                		theme_text_color:"Secondary"
+  
+                            MDCard:
+                                padding:"50dp"
+                                md_bg_color:187/255, 230/255, 101/255,1
+                                radius:[16,16,16,16]
+                                on_release:app.doc_list()
+                                size_hint: None, None
+                                elevation:4
+                                size: "250dp", "250dp"
+                                MDRelativeLayout:
+                                	Image:
+                                		source: "doctor.jpg"
+                               		 pos_hint :{"center_x":0.5,"center_y":0.82}
+                               		 size_hint:None,None
+                               		 size:"150dp","150dp"
+                               	 MDLabel:
+                                		text:"general practitioner"
+                                		pos_hint :{"center_x":0.69,"center_y":0.2}
+                                		theme_text_color:"Custom"
+                                		text_color:1,1,1,1
+                                		bold:True
+                                		font_style:"H6"
+                                	MDLabel:
+                                		text:"General doctor"  
+                                		pos_hint :{"center_x":0.7,"center_y":0.01}
+                                		theme_text_color:"Secondary"              
+
+                            MDCard:
+                                padding:"50dp"
+                                md_bg_color:130/255, 230/255, 227/255,1
+                                radius:[16,16,16,16]
+                                on_release:app.doc_list()
+                                size_hint: None, None
+                                elevation:4
+                                size: "250dp", "250dp"
+                                MDRelativeLayout:
+                                	Image:
+                                		source: "kidney.jpg"
+                               		 pos_hint :{"center_x":0.5,"center_y":0.8}
+                               		 size_hint:None,None
+                               		 size:"150dp","150dp"
+                               	 MDLabel:
+                                		text:"nephrologist"
+                                		pos_hint :{"center_x":0.69,"center_y":0.23}
+                                		theme_text_color:"Custom"
+                                		text_color:1,1,1,1
+                                		bold:True
+                                		font_style:"H6"
+                                	MDLabel:
+                                		text:"Kidney doctor"  
+                                		pos_hint :{"center_x":0.7,"center_y":0.08}
+                                		theme_text_color:"Secondary" 
+            Screen:
+                name:"regerror"
+                MDTopAppBar:
+                    pos_hint:{"top":1}
+                    elevation:4
+                    md_bg_color: 68/255, 156/255, 132/255, 1
+                    title: "Error"
+                    left_action_items: [["arrow-left", lambda x: app.change_screen("main")]]
+                MDLabel:
+                    text:"Invalid Date and/or time. Please Try again "
+                    pos_hint:{"center_x":0.8,"center_y":0.5}
+                                                   		                                                                                                                    		                                                            
+                                         
+            Screen:
+                name: "register"
+                MDRelativeLayout:
+                    MDTopAppBar:
+                        size_hint_y: None
+                        pos_hint:{"top":1}
+                        elevation:4
+                        md_bg_color: 68/255, 156/255, 132/255, 1
+                        title: "Register Screen"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+                    MDIconButton:
+                        icon: "arrow-left-bold"
+                        pos_hint: {"center_x": 0.01, "top": 0.90}
+                        on_release: app.change_screen("doctor_list")
+                    MDLabel:
+                        text: "REGISTRATION"
+                        halign: "center"
+                        pos_hint:{"center_x":0.5,"center_y":0.84}
+                        size_hint_y: None
+                        height: self.texture_size[1]
+                        bold : True
+                    MDTextFieldRect:
+                        spacing: "40dp"
+                        id: name
+                        pos_hint: {"center_x": 0.5, "center_y": 0.76}
+                        size_hint: (0.5, None)
+                        height: "40dp"
+                        hint_text: "Name"
+                    MDTextFieldRect:
+                        id: age
+                        pos_hint: {"center_x": 0.5, "center_y": 0.66}
+                        size_hint: (0.5, None)
+                        height: "40dp"
+                        hint_text: "Age"
+                        input_filter: "int"
+                    MDLabel:
+                    	text:"Male"
+                    	pos_hint: {"center_x": 0.8, "center_y": 0.56}
+                    MDCheckbox:
+                    	group: "gender"
+                    	id: male
+                    	ripple_scale:0
+                    	size_hint:None,None
+                    	pos_hint: {"center_x": 0.35, "center_y": 0.56}
+                    MDLabel:
+                    	text:"Female"
+                    	pos_hint: {"center_x": 0.94, "center_y": 0.56}
+                    MDCheckbox:
+                    	group: "gender"
+                    	id:female
+                    	ripple_scale:0
+                    	size_hint:None,None
+                    	pos_hint: {"center_x": 0.5, "center_y": 0.56}
+                    MDTextFieldRect:
+                        id: phone
+                        pos_hint: {"center_x": 0.5, "center_y": 0.46}
+                        size_hint: (0.5, None)
+                        height: "40dp"
+                        hint_text: "Phone no"
+                        input_filter: "int"
+                    MDTextFieldRect:
+                        id: disease
+                        pos_hint: {"center_x": 0.5, "center_y": 0.36}
+                        size_hint: (0.5, None)
+                        height: "40dp"
+                        hint_text: "Enter your disease"
+                    MDRoundFlatIconButton:
+                    	icon:"calendar-today"
+                    	text:"Select Date"
+                    	pos_hint:{"center_x":0.3,"center_y":0.26}
+                    	on_release:app.datepic()
+                    MDLabel:
+                    	id : date
+                    	text:"Selected Date: "
+                    	pos_hint:{"center_x":0.75,"center_y":0.19}
+                    MDRoundFlatIconButton:
+                    	icon:"clock-time-eight"
+                    	text:"Select starting time"
+                    	pos_hint:{"center_x":0.55,"center_y":0.26}
+                    	on_release:app.timepic()
+                    MDRoundFlatIconButton:
+                    	icon:"clock-time-eight"
+                    	text:"Select ending time"
+                    	pos_hint:{"center_x":0.75,"center_y":0.26}
+                    	on_release:app.time1pic()
+                    MDLabel:
+                    	id : time
+                    	text:"Selected time from _ to _ "
+                    	pos_hint:{"center_x":0.95,"center_y":0.19}
+                    MDRoundFlatIconButton:
+                        icon: "notebook-heart"
+                        text: "Register"
+                        size: (200, 300)
+                        pos_hint: {"center_x": 0.5, "center_y": 0.04}
+                        on_release: app.info()
+
+            Screen:
+                name: "recent"
+                MDBoxLayout:
+                    orientation: "vertical"
+                    MDTopAppBar:
+                        title: "Recent Registrations"
+                        pos_hint: {"top": 1}
+                        left_action_items:[["arrow-left",lambda x : app.change_screen("main")]]
+                  
+                    ScrollView:
+                        MDBoxLayout:
+                            orientation: "vertical"
+                            id: qr
+                            spacing: 20
+                            adaptive_height: True
+            Screen:
+                name: "done"
+                MDTopAppBar:
+                    pos_hint:{'top':1}
+                    title:"Order Medicine"
+                    left_action_items: [["arrow-left", lambda x:app.change_screen("main")]]
+                MDLabel:
+                    text:"We have submitted your request."
+                    pos_hint:{"center_x":0.85,"center_y":0.54}
+                    bold:True
+                MDLabel:
+                    text:"Our Service will very soon let you know for delivery."
+                    pos_hint:{"center_x":0.78,"center_y":0.49}
+                    bold:True
+            Screen:
+                name: "temp"
+                MDRelativeLayout:
+                    orientation: "vertical"
+                    id: temp_qr
+                    MDTopAppBar:
+                        title: "Thanks for Registration"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+                        pos_hint: {'top': 1}
+                    MDLabel:
+                        text: "THANKS FOR REGISTRATION"
+                        pos_hint: {"center_x": 0.5, "center_y": .8}
+                        halign: "center"
+                        bold:True
+                    MDIconButton:
+                        icon: "arrow-left-bold"
+                        pos_hint: {"center_x": 0.01, "center_y": 0.9}
+                        on_release: app.change_screen("main")
+            Screen:
+                name: "error"
+                MDTopAppBar:
+                    pos_hint:{'top':1}
+                    title:"Order Medicine"
+                MDLabel:
+                    text:"Error! one or more Details aren't filled. Please fill it"
+                    pos_hint:{"center_x":0.78,"center_y":0.55}
+                    bold:True
+                    #add a function here that autmoatically changes screen to 
+                    #"medicine" after a delay of 5 second                       
+            
+        MDNavigationDrawer:
+            id: nav_drawer
+            md_bg_color: 208/255, 222/255, 245/255, 1
+            MDNavigationDrawerMenu:
+                MDNavigationDrawerHeader:
+                    title: "profile"
+                    spacing: "50dp"
+                    padding: 50
+                
+                 
+                DrawerClickableItem:
+                    padding: 13
+                    text: "Recent Registration"
+                    on_release: app.change_screen("recent")

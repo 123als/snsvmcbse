@@ -1,0 +1,29 @@
+Dr. Aditi Sharma
+Age: 42
+Gender: Female
+Specialized in: General Orthopedics
+Experience: 20 years
+
+Dr. Vikrant Reddy
+Age: 48
+Gender: Male
+Specialized in: Orthopedic Surgery
+Experience: 25 years
+
+Dr. Kavya Singhania
+Age: 35
+Gender: Female
+Specialized in: Pediatric Orthopedics
+Experience: 15 years
+
+Dr. Arjun Kapoor
+Age: 50
+Gender: Male
+Specialized in: Sports Medicine
+Experience: 22 years
+
+Dr. Anjali Desai
+Age: 38
+Gender: Female
+Specialized in: Spine Surgery
+Experience: 18 years

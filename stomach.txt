@@ -1,0 +1,29 @@
+Dr. Siddharth Malhotra
+Age: 45
+Gender: Male
+Specialized in: Gastroenterology
+Experience: 20 years
+
+Dr. Neha Kapoor
+Age: 40
+Gender: Female
+Specialized in: Hepatology
+Experience: 18 years
+
+Dr. Rajesh Varma
+Age: 50
+Gender: Male
+Specialized in: Pediatric Gastroenterology
+Experience: 25 years
+
+Dr. Ananya Reddy
+Age: 42
+Gender: Female
+Specialized in: Endoscopic Ultrasound
+Experience: 15 years
+
+Dr. Arvind Sharma
+Age: 48
+Gender: Male
+Specialized in: Inflammatory Bowel Disease (IBD)
+Experience: 22 years

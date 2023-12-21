@@ -1,0 +1,29 @@
+Dr. Aishwarya Menon
+Age: 45
+Gender: Female
+Specialized in: General Neurology
+Experience: 20 years
+
+Dr. Vikram Khanna
+Age: 50
+Gender: Male
+Specialized in: Stroke Specialist
+Experience: 25 years
+
+Dr. Maya Iyer
+Age: 38
+Gender: Female
+Specialized in: Pediatric Neurology
+Experience: 15 years
+
+Dr. Anuj Desai
+Age: 48
+Gender: Male
+Specialized in: Movement Disorders
+Experience: 22 years
+
+Dr. Kavita Singhania
+Age: 42
+Gender: Female
+Specialized in: Neurocritical Care
+Experience: 18 years
